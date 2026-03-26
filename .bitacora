@@ -1,0 +1,6 @@
+npm install fastify zod
+
+npm install -D typescript ts-node-dev @types/node
+npm install -D typescript@latest ts-node-dev@latest
+
+npm install dotenv
