@@ -5,6 +5,10 @@ const app = Fastify({
   logger: true,
 });
 
+app.get("/", async (request, reply) => {
+  return { message: "Bienvenido a la API" };
+});
+
 app.register(
   async function (api) {
     api.register(usersRoutes, { prefix: "/users" });
