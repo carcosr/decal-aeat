@@ -5,7 +5,12 @@ const app = Fastify({
   logger: true,
 });
 
-app.register(usersRoutes, { prefix: "/users" });
+app.register(
+  async function (api) {
+    api.register(usersRoutes, { prefix: "/users" });
+  },
+  { prefix: "/api" },
+);
 
 const port = Number(process.env.PORT) || 3000;
 
