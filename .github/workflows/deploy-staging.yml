@@ -27,7 +27,7 @@ jobs:
         run: npm run build
 
       - name: Zip artifact
-        run: zip -r release.zip dist package.json package-lock.json
+        run: zip -r release.zip . -x "node_modules/*" ".github/*"
 
       - name: Deploy to Azure Staging Slot
         uses: azure/webapps-deploy@v3
