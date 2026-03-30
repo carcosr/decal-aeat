@@ -3,6 +3,7 @@ import { FastifyReply, FastifyRequest } from "fastify";
 let users = [
   { id: 1, name: "Juan" },
   { id: 2, name: "Ana" },
+  { id: 3, name: "Sergio" },
 ];
 
 export const getUsers = async (req: FastifyRequest, reply: FastifyReply) => {
