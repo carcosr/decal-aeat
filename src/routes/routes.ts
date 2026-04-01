@@ -1,17 +1,15 @@
+import { userController } from "../user.controller";
+
 export const routes = [
   {
     method: "POST",
     url: "/users",
-    handler: async (req, res) => {
-      res.status(200).send({ status: "OK - POST" });
-    },
+    handler: userController.create,
   },
   {
     method: "GET",
     url: "/users",
-    handler: async (req, res) => {
-      res.status(200).send({ status: "OK - GET" });
-    },
+    handler: userController.getAll,
   },
   {
     method: "PUT",

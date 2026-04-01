@@ -1,3 +1,4 @@
+/*
 import { FastifyReply, FastifyRequest } from "fastify";
 
 let users = [
@@ -22,3 +23,4 @@ export const createUser = async (req: FastifyRequest<{ Body: { name: string } }>
 
   reply.code(201).send(newUser);
 };
+*/

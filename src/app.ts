@@ -1,4 +1,8 @@
 import { server } from "./server.js";
+import { seedUsers } from "./db.js";
+
+// Semilla de datos
+seedUsers();
 
 // Puerto y arranque
 const start = async () => {
