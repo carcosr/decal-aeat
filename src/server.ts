@@ -1,12 +1,23 @@
 import Fastify from "fastify";
+import { routes } from "./routes/routes";
+//import cors from "@fastify/cors";
 
 export const server = Fastify({
   logger: true,
 });
 
+// await server.register(cors, {
+//   origin: "*",
+// });
+
 // Ruta básica
 server.get("/", async (request, reply) => {
   return { message: "Bienvenido a la API" };
+});
+
+// Incorporación de las rutas
+routes.forEach((route) => {
+  server.route(route);
 });
 
 /*

@@ -1,4 +1,3 @@
-import Fastify from "fastify";
 import { server } from "./server.js";
 
 // Puerto y arranque
