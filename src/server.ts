@@ -1,13 +1,17 @@
 import Fastify from "fastify";
-import usersRoutes from "./routes/users.route";
 
-const app = Fastify({
+export const server = Fastify({
   logger: true,
 });
 
-app.get("/", async (request, reply) => {
+// Ruta básica
+server.get("/", async (request, reply) => {
   return { message: "Bienvenido a la API" };
 });
+
+/*
+import usersRoutes from "./routes/users.route";
+
 
 app.register(
   async function (api) {
@@ -33,3 +37,4 @@ const start = async () => {
 };
 
 start();
+*/
