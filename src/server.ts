@@ -1,13 +1,31 @@
 import Fastify from "fastify";
-import usersRoutes from "./routes/users.route";
+import { routes } from "./routes/routes";
+//import cors from "@fastify/cors";
 
-const app = Fastify({
+export const server = Fastify({
   logger: true,
 });
 
-app.get("/", async (request, reply) => {
+// await server.register(cors, {
+//   origin: "*",
+// });
+
+// Ruta básica
+server.get("/", async (request, reply) => {
   return { message: "Bienvenido a la API" };
 });
+
+// Registro de rutas
+server.register(routes);
+
+// Incorporación de las rutas
+//routes.forEach((route) => {
+//  server.route(route);
+//});
+
+/*
+import usersRoutes from "./routes/users.route";
+
 
 app.register(
   async function (api) {
@@ -33,3 +51,4 @@ const start = async () => {
 };
 
 start();
+*/
