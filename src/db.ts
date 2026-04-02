@@ -1,4 +1,4 @@
-import type { User } from "./user.model";
+import type { User } from "./user.model.js";
 
 let users: User[] = [];
 
