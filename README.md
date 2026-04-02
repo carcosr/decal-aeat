@@ -1,17 +1,17 @@
 # decal-aeat
-API REST de decal para comunicaciones con la AEAT
 
+API REST de decal para comunicaciones con la AEAT
 
 To install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
 To run:
 
 ```bash
-bun run index.ts
+npm start
 ```
 
-This project was created using `bun init` in bun v1.3.8. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+This project was created using `npm init` in node v24.x + Fastify.
