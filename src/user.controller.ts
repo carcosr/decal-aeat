@@ -1,6 +1,6 @@
 import { FastifyRequest, FastifyReply } from "fastify";
-import type { User } from "./user.model";
-import { userDb } from "./db";
+import type { User } from "./user.model.js";
+import { userDb } from "./db.js";
 
 // Get all users
 export const getUsers = async (req: FastifyRequest, res: FastifyReply) => {

@@ -1,5 +1,5 @@
 import { FastifyInstance } from "fastify";
-import { getUsers, getUserById, createUser, updateUser, deleteUser } from "../user.controller";
+import { getUsers, getUserById, createUser, updateUser, deleteUser } from "../user.controller.js";
 
 export async function routes(fastify: FastifyInstance) {
   fastify.get("/users", getUsers);
