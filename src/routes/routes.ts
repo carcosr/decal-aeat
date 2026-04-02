@@ -1,5 +1,15 @@
-import { userController } from "../user.controller";
+import { FastifyInstance } from "fastify";
+import { getUsers, getUserById, createUser, updateUser, deleteUser } from "../user.controller";
 
+export async function routes(fastify: FastifyInstance) {
+  fastify.get("/users", getUsers);
+  fastify.get("/users/:id", getUserById);
+  fastify.post("/users", createUser);
+  fastify.put("/users/:id", updateUser);
+  fastify.delete("/users/:id", deleteUser);
+}
+
+/*
 export const routes = [
   {
     method: "POST",
@@ -26,3 +36,4 @@ export const routes = [
     },
   },
 ];
+*/

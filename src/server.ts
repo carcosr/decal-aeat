@@ -15,10 +15,13 @@ server.get("/", async (request, reply) => {
   return { message: "Bienvenido a la API" };
 });
 
+// Registro de rutas
+server.register(routes);
+
 // Incorporación de las rutas
-routes.forEach((route) => {
-  server.route(route);
-});
+//routes.forEach((route) => {
+//  server.route(route);
+//});
 
 /*
 import usersRoutes from "./routes/users.route";
