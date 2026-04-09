@@ -1,8 +1,8 @@
-name: "boilerplate-api-node-ts"
+name: "aeat-decal-api-service CI/CD Staging"
 
 on:
   push:
-    branches: -main
+    branches: -develop
 
 jobs:
   build-and-deploy:
@@ -26,9 +26,9 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: "boilerplate-api-node-ts"
+          app-name: "aeat-decal-api-service"
           slot-name: "staging"
           publish-profile: ${{ secrets.STAGING_AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: "./dist"
+          package: .
 
       # Add deployment steps here (e.g., deploy to Heroku, AWS, etc.)

@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-api-node-ts",
+  "name": "aeat-decal-api-service",
   "version": "1.0.0",
-  "description": "boilerplate for api with node and typescript",
+  "description": "decal api server for AEAT",
   "main": "dist/server.js",
   "scripts": {
     "build": "tsc --project tsconfig.json",
