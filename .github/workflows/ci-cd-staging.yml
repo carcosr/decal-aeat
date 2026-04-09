@@ -30,5 +30,3 @@ jobs:
           slot-name: "staging"
           publish-profile: ${{ secrets.STAGING_AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: .
-
-      # Add deployment steps here (e.g., deploy to Heroku, AWS, etc.)
