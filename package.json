@@ -1,23 +1,25 @@
 {
-  "name": "decal-aeat",
+  "name": "boilerplate-api-node-ts",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/app.js",
-  "type": "module",
+  "description": "boilerplate for api with node and typescript",
+  "main": "dist/server.js",
   "scripts": {
-    "dev": "tsx watch src src/app.ts",
-    "build": "tsc",
-    "start": "tsx src/app.ts"
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts"
+  },
+  "engines": {
+    "node": ">=24.0.0"
   },
   "keywords": [],
-  "author": "",
+  "author": "CAR",
   "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^25.5.0",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
-  },
   "dependencies": {
     "fastify": "^5.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
   }
 }

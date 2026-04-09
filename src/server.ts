@@ -1,54 +1,20 @@
-import Fastify from "fastify";
-import { routes } from "./routes/routes.js";
-//import cors from "@fastify/cors";
+import fastify from "fastify";
 
-export const server = Fastify({
-  logger: true,
+const server = fastify({ logger: true });
+
+server.get("/", async () => {
+  return { message: "API funcionando 🚀" };
 });
-
-// await server.register(cors, {
-//   origin: "*",
-// });
-
-// Ruta básica
-server.get("/", async (request, reply) => {
-  return { message: "Bienvenido a la API" };
-});
-
-// Registro de rutas
-server.register(routes);
-
-// Incorporación de las rutas
-//routes.forEach((route) => {
-//  server.route(route);
-//});
-
-/*
-import usersRoutes from "./routes/users.route";
-
-
-app.register(
-  async function (api) {
-    api.register(usersRoutes, { prefix: "/users" });
-  },
-  { prefix: "/api" },
-);
-
-const port = Number(process.env.PORT) || 3000;
 
 const start = async () => {
   try {
-    await app.listen({
-      port,
-      host: "0.0.0.0", // IMPORTANTE para Azure
-    });
-
-    console.log(`API corriendo en http://0.0.0.0:${port}`);
+    const port = Number(process.env.PORT) || 3000;
+    await server.listen({ port, host: "0.0.0.0" });
+    console.log(`Servidor corriendo en puerto ${port}`);
   } catch (err) {
-    app.log.error(err);
+    server.log.error(err);
     process.exit(1);
   }
 };
 
 start();
-*/
