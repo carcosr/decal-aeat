@@ -1,33 +1,18 @@
-import Fastify from "fastify";
-import usersRoutes from "./routes/users.route";
+import fastify from "fastify";
 
-const app = Fastify({
-  logger: true,
+const server = fastify({ logger: true });
+
+server.get("/", async () => {
+  return { message: "API funcionando 🚀" };
 });
-
-app.get("/", async (request, reply) => {
-  return { message: "Bienvenido a la API" };
-});
-
-app.register(
-  async function (api) {
-    api.register(usersRoutes, { prefix: "/users" });
-  },
-  { prefix: "/api" },
-);
-
-const port = Number(process.env.PORT) || 3000;
 
 const start = async () => {
   try {
-    await app.listen({
-      port,
-      host: "0.0.0.0", // IMPORTANTE para Azure
-    });
-
-    console.log(`API corriendo en http://0.0.0.0:${port}`);
+    const port = Number(process.env.PORT) || 3000;
+    await server.listen({ port, host: "0.0.0.0" });
+    console.log(`Servidor corriendo en puerto ${port}`);
   } catch (err) {
-    app.log.error(err);
+    server.log.error(err);
     process.exit(1);
   }
 };
